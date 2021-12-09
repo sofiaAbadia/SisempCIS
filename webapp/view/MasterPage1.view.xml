@@ -1,0 +1,36 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.cis.controller.MasterPage1" xmlns="sap.m">
+    <Page title="Agentes de Ventas" showHeader="true" showFooter="true" showNavButton="false" navButtonPress="_onPageNavButtonPress">
+        <content>
+            <List mode="SingleSelectMaster" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true" itemPress="_onObjectListItemPress" items="{path:'/SupplierSet', templateShareable:true}">
+                <infoToolbar/>
+                <headerToolbar>
+                    <Toolbar enabled="true" visible="true" width="" design="Solid">
+                        <content>
+                            <SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
+                        </content>
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                    <ObjectListItem intro="{ID}" title="{Name}" number="" numberUnit="" numberState="None" type="Active" selected="false" showMarkers="false">
+                        <attributes>
+                            <ObjectAttribute title="" text="Email" active="false" visible="true"/>
+                            <ObjectAttribute text="Número" active="false" visible="true"/>
+                        </attributes>
+                        <firstStatus>
+                            <ObjectStatus title="{email}" text="Status 1" state="None" visible="true"/>
+                        </firstStatus>
+                        <secondStatus>
+                            <ObjectStatus title="{Phone}" text="" state="None" visible="true"/>
+                        </secondStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+        <footer>
+            <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+                <content/>
+            </OverflowToolbar>
+        </footer>
+        <headerContent/>
+    </Page>
+</mvc:View>

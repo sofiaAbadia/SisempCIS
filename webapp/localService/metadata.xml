@@ -1,0 +1,500 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="b2c32e6609630d03165d1678" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="b2c32e6609630d03165d1678_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="ProductSet" EntityType="b2c32e6609630d03165d1678.Product" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="ProductSupplierSupplier" Association="b2c32e6609630d03165d1678.ProductSupplierSupplier" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ProductSet" Role="FromRole_ProductSupplierSupplier"/>
+                    <End EntitySet="SupplierSet" Role="ToRole_ProductSupplierSupplier"/>
+                </AssociationSet>
+                <AssociationSet Name="ProductReviewsReview" Association="b2c32e6609630d03165d1678.ProductReviewsReview" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ProductSet" Role="FromRole_ProductReviewsReview"/>
+                    <End EntitySet="ReviewSet" Role="ToRole_ProductReviewsReview"/>
+                </AssociationSet>
+                <EntitySet Name="SupplierSet" EntityType="b2c32e6609630d03165d1678.Supplier" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="SupplierCalendarioCalendario" Association="b2c32e6609630d03165d1678.SupplierCalendarioCalendario" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="SupplierSet" Role="FromRole_SupplierCalendarioCalendario"/>
+                    <End EntitySet="CalendarioSet" Role="ToRole_SupplierCalendarioCalendario"/>
+                </AssociationSet>
+                <AssociationSet Name="SupplierProductProduct" Association="b2c32e6609630d03165d1678.SupplierProductProduct" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="SupplierSet" Role="FromRole_SupplierProductProduct"/>
+                    <End EntitySet="ProductSet" Role="ToRole_SupplierProductProduct"/>
+                </AssociationSet>
+                <AssociationSet Name="SupplierClienteCliente" Association="b2c32e6609630d03165d1678.SupplierClienteCliente" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="SupplierSet" Role="FromRole_SupplierClienteCliente"/>
+                    <End EntitySet="ClienteSet" Role="ToRole_SupplierClienteCliente"/>
+                </AssociationSet>
+                <AssociationSet Name="SuppliercitasCita_Agente" Association="b2c32e6609630d03165d1678.SuppliercitasCita_Agente" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="SupplierSet" Role="FromRole_SuppliercitasCita_Agente"/>
+                    <End EntitySet="Cita_AgenteSet" Role="ToRole_SuppliercitasCita_Agente"/>
+                </AssociationSet>
+                <AssociationSet Name="SupplierServicesServices_Available" Association="b2c32e6609630d03165d1678.SupplierServicesServices_Available" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="SupplierSet" Role="FromRole_SupplierServicesServices_Available"/>
+                    <End EntitySet="Services_AvailableSet" Role="ToRole_SupplierServicesServices_Available"/>
+                </AssociationSet>
+                <AssociationSet Name="SupplierCMethodCommunicationMethod" Association="b2c32e6609630d03165d1678.SupplierCMethodCommunicationMethod" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="SupplierSet" Role="FromRole_SupplierCMethodCommunicationMethod"/>
+                    <End EntitySet="CommunicationMethodSet" Role="ToRole_SupplierCMethodCommunicationMethod"/>
+                </AssociationSet>
+                <AssociationSet Name="SupplierCitiesCities_Available" Association="b2c32e6609630d03165d1678.SupplierCitiesCities_Available" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="SupplierSet" Role="FromRole_SupplierCitiesCities_Available"/>
+                    <End EntitySet="Cities_AvailableSet" Role="ToRole_SupplierCitiesCities_Available"/>
+                </AssociationSet>
+                <EntitySet Name="ReviewSet" EntityType="b2c32e6609630d03165d1678.Review" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="ReviewProductProduct" Association="b2c32e6609630d03165d1678.ReviewProductProduct" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ReviewSet" Role="FromRole_ReviewProductProduct"/>
+                    <End EntitySet="ProductSet" Role="ToRole_ReviewProductProduct"/>
+                </AssociationSet>
+                <EntitySet Name="CalendarioSet" EntityType="b2c32e6609630d03165d1678.Calendario" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="CalendarioSupplierSupplier" Association="b2c32e6609630d03165d1678.CalendarioSupplierSupplier" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="CalendarioSet" Role="FromRole_CalendarioSupplierSupplier"/>
+                    <End EntitySet="SupplierSet" Role="ToRole_CalendarioSupplierSupplier"/>
+                </AssociationSet>
+                <AssociationSet Name="CalendarioClienteCliente" Association="b2c32e6609630d03165d1678.CalendarioClienteCliente" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="CalendarioSet" Role="FromRole_CalendarioClienteCliente"/>
+                    <End EntitySet="ClienteSet" Role="ToRole_CalendarioClienteCliente"/>
+                </AssociationSet>
+                <AssociationSet Name="CalendarioCMethodCommunicationMethod" Association="b2c32e6609630d03165d1678.CalendarioCMethodCommunicationMethod" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="CalendarioSet" Role="FromRole_CalendarioCMethodCommunicationMethod"/>
+                    <End EntitySet="CommunicationMethodSet" Role="ToRole_CalendarioCMethodCommunicationMethod"/>
+                </AssociationSet>
+                <EntitySet Name="CommunicationMethodSet" EntityType="b2c32e6609630d03165d1678.CommunicationMethod" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="CommunicationMethodCalendarioCalendario" Association="b2c32e6609630d03165d1678.CommunicationMethodCalendarioCalendario" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="CommunicationMethodSet" Role="FromRole_CommunicationMethodCalendarioCalendario"/>
+                    <End EntitySet="CalendarioSet" Role="ToRole_CommunicationMethodCalendarioCalendario"/>
+                </AssociationSet>
+                <AssociationSet Name="CommunicationMethodSupplierSupplier" Association="b2c32e6609630d03165d1678.CommunicationMethodSupplierSupplier" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="CommunicationMethodSet" Role="FromRole_CommunicationMethodSupplierSupplier"/>
+                    <End EntitySet="SupplierSet" Role="ToRole_CommunicationMethodSupplierSupplier"/>
+                </AssociationSet>
+                <EntitySet Name="Cities_AvailableSet" EntityType="b2c32e6609630d03165d1678.Cities_Available" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="Cities_AvailableSupplierSupplier" Association="b2c32e6609630d03165d1678.Cities_AvailableSupplierSupplier" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="Cities_AvailableSet" Role="FromRole_Cities_AvailableSupplierSupplier"/>
+                    <End EntitySet="SupplierSet" Role="ToRole_Cities_AvailableSupplierSupplier"/>
+                </AssociationSet>
+                <EntitySet Name="Services_AvailableSet" EntityType="b2c32e6609630d03165d1678.Services_Available" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="Services_AvailableSupplierSupplier" Association="b2c32e6609630d03165d1678.Services_AvailableSupplierSupplier" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="Services_AvailableSet" Role="FromRole_Services_AvailableSupplierSupplier"/>
+                    <End EntitySet="SupplierSet" Role="ToRole_Services_AvailableSupplierSupplier"/>
+                </AssociationSet>
+                <EntitySet Name="ClienteSet" EntityType="b2c32e6609630d03165d1678.Cliente" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="ClienteCalendarioCalendario" Association="b2c32e6609630d03165d1678.ClienteCalendarioCalendario" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ClienteSet" Role="FromRole_ClienteCalendarioCalendario"/>
+                    <End EntitySet="CalendarioSet" Role="ToRole_ClienteCalendarioCalendario"/>
+                </AssociationSet>
+                <AssociationSet Name="Clientecita_agenteCita_Agente" Association="b2c32e6609630d03165d1678.Clientecita_agenteCita_Agente" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ClienteSet" Role="FromRole_Clientecita_agenteCita_Agente"/>
+                    <End EntitySet="Cita_AgenteSet" Role="ToRole_Clientecita_agenteCita_Agente"/>
+                </AssociationSet>
+                <AssociationSet Name="ClienteSupplierSupplier" Association="b2c32e6609630d03165d1678.ClienteSupplierSupplier" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="ClienteSet" Role="FromRole_ClienteSupplierSupplier"/>
+                    <End EntitySet="SupplierSet" Role="ToRole_ClienteSupplierSupplier"/>
+                </AssociationSet>
+                <EntitySet Name="Cita_AgenteSet" EntityType="b2c32e6609630d03165d1678.Cita_Agente" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <AssociationSet Name="Cita_AgenteAgenteSupplier" Association="b2c32e6609630d03165d1678.Cita_AgenteAgenteSupplier" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="Cita_AgenteSet" Role="FromRole_Cita_AgenteAgenteSupplier"/>
+                    <End EntitySet="SupplierSet" Role="ToRole_Cita_AgenteAgenteSupplier"/>
+                </AssociationSet>
+                <AssociationSet Name="Cita_AgenteClienteCliente" Association="b2c32e6609630d03165d1678.Cita_AgenteClienteCliente" sap:creatable="true" sap:updatable="true" sap:deletable="true">
+                    <End EntitySet="Cita_AgenteSet" Role="FromRole_Cita_AgenteClienteCliente"/>
+                    <End EntitySet="ClienteSet" Role="ToRole_Cita_AgenteClienteCliente"/>
+                </AssociationSet>
+            </EntityContainer>
+            <EntityType Name="Product">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+                <Property Name="Category" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Category"/>
+                <Property Name="Price" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Price"/>
+                <Property Name="Currency" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Currency"/>
+                <NavigationProperty Name="Supplier" Relationship="b2c32e6609630d03165d1678.ProductSupplierSupplier" FromRole="FromRole_ProductSupplierSupplier" ToRole="ToRole_ProductSupplierSupplier"/>
+                <NavigationProperty Name="Reviews" Relationship="b2c32e6609630d03165d1678.ProductReviewsReview" FromRole="FromRole_ProductReviewsReview" ToRole="ToRole_ProductReviewsReview"/>
+            </EntityType>
+            <Association Name="ProductSupplierSupplier">
+                <End Type="b2c32e6609630d03165d1678.Product" Multiplicity="1" Role="FromRole_ProductSupplierSupplier"/>
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="*" Role="ToRole_ProductSupplierSupplier"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ProductSupplierSupplier">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ProductSupplierSupplier">
+                        <PropertyRef Name="___FK_28eddc08004e7c47165d77c1_00030"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ProductReviewsReview">
+                <End Type="b2c32e6609630d03165d1678.Product" Multiplicity="1" Role="FromRole_ProductReviewsReview"/>
+                <End Type="b2c32e6609630d03165d1678.Review" Multiplicity="*" Role="ToRole_ProductReviewsReview"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ProductReviewsReview">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ProductReviewsReview">
+                        <PropertyRef Name="___FK_28eddc08004e7c47165d77c1_00032"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Supplier">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+                <Property Name="email" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="email"/>
+                <Property Name="Phone" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Phone"/>
+                <Property Name="___FK_28eddc08004e7c47165d77c1_00030" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_28eddc08004e7c47165d77c1_00030"/>
+                <Property Name="___FK_28eddc08004e7c47165d77c1_00036" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_28eddc08004e7c47165d77c1_00036"/>
+                <Property Name="Image" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Image"/>
+                <Property Name="Date" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date" sap:label="Date"/>
+                <Property Name="___FK_b3d6ecd6fc98000a16749d71_00007" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_b3d6ecd6fc98000a16749d71_00007"/>
+                <Property Name="___FK_b3d6ecd6fc98000a16749d71_00009" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_b3d6ecd6fc98000a16749d71_00009"/>
+                <Property Name="___FK_b3d6ecd6fc98000a16749d71_00011" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_b3d6ecd6fc98000a16749d71_00011"/>
+                <NavigationProperty Name="Calendario" Relationship="b2c32e6609630d03165d1678.SupplierCalendarioCalendario" FromRole="FromRole_SupplierCalendarioCalendario" ToRole="ToRole_SupplierCalendarioCalendario"/>
+                <NavigationProperty Name="Product" Relationship="b2c32e6609630d03165d1678.SupplierProductProduct" FromRole="FromRole_SupplierProductProduct" ToRole="ToRole_SupplierProductProduct"/>
+                <NavigationProperty Name="Cliente" Relationship="b2c32e6609630d03165d1678.SupplierClienteCliente" FromRole="FromRole_SupplierClienteCliente" ToRole="ToRole_SupplierClienteCliente"/>
+                <NavigationProperty Name="citas" Relationship="b2c32e6609630d03165d1678.SuppliercitasCita_Agente" FromRole="FromRole_SuppliercitasCita_Agente" ToRole="ToRole_SuppliercitasCita_Agente"/>
+                <NavigationProperty Name="Services" Relationship="b2c32e6609630d03165d1678.SupplierServicesServices_Available" FromRole="FromRole_SupplierServicesServices_Available" ToRole="ToRole_SupplierServicesServices_Available"/>
+                <NavigationProperty Name="CMethod" Relationship="b2c32e6609630d03165d1678.SupplierCMethodCommunicationMethod" FromRole="FromRole_SupplierCMethodCommunicationMethod" ToRole="ToRole_SupplierCMethodCommunicationMethod"/>
+                <NavigationProperty Name="Cities" Relationship="b2c32e6609630d03165d1678.SupplierCitiesCities_Available" FromRole="FromRole_SupplierCitiesCities_Available" ToRole="ToRole_SupplierCitiesCities_Available"/>
+            </EntityType>
+            <Association Name="SupplierCalendarioCalendario">
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="FromRole_SupplierCalendarioCalendario"/>
+                <End Type="b2c32e6609630d03165d1678.Calendario" Multiplicity="*" Role="ToRole_SupplierCalendarioCalendario"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SupplierCalendarioCalendario">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SupplierCalendarioCalendario">
+                        <PropertyRef Name="___FK_28eddc08004e7c47165d77c1_00034"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SupplierProductProduct">
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="FromRole_SupplierProductProduct"/>
+                <End Type="b2c32e6609630d03165d1678.Product" Multiplicity="1" Role="ToRole_SupplierProductProduct"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_SupplierProductProduct">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_SupplierProductProduct">
+                        <PropertyRef Name="___FK_28eddc08004e7c47165d77c1_00036"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SupplierClienteCliente">
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="FromRole_SupplierClienteCliente"/>
+                <End Type="b2c32e6609630d03165d1678.Cliente" Multiplicity="*" Role="ToRole_SupplierClienteCliente"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SupplierClienteCliente">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SupplierClienteCliente">
+                        <PropertyRef Name="___FK_56f213244ada18ea1673fb73_00012"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SuppliercitasCita_Agente">
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="FromRole_SuppliercitasCita_Agente"/>
+                <End Type="b2c32e6609630d03165d1678.Cita_Agente" Multiplicity="*" Role="ToRole_SuppliercitasCita_Agente"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_SuppliercitasCita_Agente">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_SuppliercitasCita_Agente">
+                        <PropertyRef Name="___FK_589c1789373115131674810c_00009"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SupplierServicesServices_Available">
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="FromRole_SupplierServicesServices_Available"/>
+                <End Type="b2c32e6609630d03165d1678.Services_Available" Multiplicity="1" Role="ToRole_SupplierServicesServices_Available"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_SupplierServicesServices_Available">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_SupplierServicesServices_Available">
+                        <PropertyRef Name="___FK_b3d6ecd6fc98000a16749d71_00007"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SupplierCMethodCommunicationMethod">
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="FromRole_SupplierCMethodCommunicationMethod"/>
+                <End Type="b2c32e6609630d03165d1678.CommunicationMethod" Multiplicity="1" Role="ToRole_SupplierCMethodCommunicationMethod"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_SupplierCMethodCommunicationMethod">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_SupplierCMethodCommunicationMethod">
+                        <PropertyRef Name="___FK_b3d6ecd6fc98000a16749d71_00009"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="SupplierCitiesCities_Available">
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="FromRole_SupplierCitiesCities_Available"/>
+                <End Type="b2c32e6609630d03165d1678.Cities_Available" Multiplicity="1" Role="ToRole_SupplierCitiesCities_Available"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_SupplierCitiesCities_Available">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_SupplierCitiesCities_Available">
+                        <PropertyRef Name="___FK_b3d6ecd6fc98000a16749d71_00011"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Review">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Rating" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Rating"/>
+                <Property Name="Reviewer" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Reviewer"/>
+                <Property Name="ReviewText" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ReviewText"/>
+                <Property Name="___FK_28eddc08004e7c47165d77c1_00032" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_28eddc08004e7c47165d77c1_00032"/>
+                <Property Name="___FK_28eddc08004e7c47165d77c1_00038" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_28eddc08004e7c47165d77c1_00038"/>
+                <NavigationProperty Name="Product" Relationship="b2c32e6609630d03165d1678.ReviewProductProduct" FromRole="FromRole_ReviewProductProduct" ToRole="ToRole_ReviewProductProduct"/>
+            </EntityType>
+            <Association Name="ReviewProductProduct">
+                <End Type="b2c32e6609630d03165d1678.Review" Multiplicity="1" Role="FromRole_ReviewProductProduct"/>
+                <End Type="b2c32e6609630d03165d1678.Product" Multiplicity="1" Role="ToRole_ReviewProductProduct"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_ReviewProductProduct">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_ReviewProductProduct">
+                        <PropertyRef Name="___FK_28eddc08004e7c47165d77c1_00038"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Calendario">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Hora" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Hora"/>
+                <Property Name="Lunes" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Lunes"/>
+                <Property Name="LunesCC" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="LunesCC"/>
+                <Property Name="Martes" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Martes"/>
+                <Property Name="MartesCC" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MartesCC"/>
+                <Property Name="Miercoles" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Miercoles"/>
+                <Property Name="MiercolesCC" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="MiercolesCC"/>
+                <Property Name="Jueves" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Jueves"/>
+                <Property Name="JuevesCC" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="JuevesCC"/>
+                <Property Name="Viernes" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Viernes"/>
+                <Property Name="ViernesCC" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ViernesCC"/>
+                <Property Name="___FK_28eddc08004e7c47165d77c1_00034" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_28eddc08004e7c47165d77c1_00034"/>
+                <Property Name="___FK_28eddc08004e7c47165d77c1_00040" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_28eddc08004e7c47165d77c1_00040"/>
+                <Property Name="___FK_c570ebb1b50ef0da16742b3e_00015" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_c570ebb1b50ef0da16742b3e_00015"/>
+                <Property Name="___FK_c570ebb1b50ef0da16742b3e_00017" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_c570ebb1b50ef0da16742b3e_00017"/>
+                <Property Name="___FK_f31845ff2f5b0c07167459e0_00007" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_f31845ff2f5b0c07167459e0_00007"/>
+                <Property Name="___FK_f31845ff2f5b0c07167459e0_00009" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_f31845ff2f5b0c07167459e0_00009"/>
+                <NavigationProperty Name="Supplier" Relationship="b2c32e6609630d03165d1678.CalendarioSupplierSupplier" FromRole="FromRole_CalendarioSupplierSupplier" ToRole="ToRole_CalendarioSupplierSupplier"/>
+                <NavigationProperty Name="Cliente" Relationship="b2c32e6609630d03165d1678.CalendarioClienteCliente" FromRole="FromRole_CalendarioClienteCliente" ToRole="ToRole_CalendarioClienteCliente"/>
+                <NavigationProperty Name="CMethod" Relationship="b2c32e6609630d03165d1678.CalendarioCMethodCommunicationMethod" FromRole="FromRole_CalendarioCMethodCommunicationMethod" ToRole="ToRole_CalendarioCMethodCommunicationMethod"/>
+            </EntityType>
+            <Association Name="CalendarioSupplierSupplier">
+                <End Type="b2c32e6609630d03165d1678.Calendario" Multiplicity="1" Role="FromRole_CalendarioSupplierSupplier"/>
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="ToRole_CalendarioSupplierSupplier"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_CalendarioSupplierSupplier">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_CalendarioSupplierSupplier">
+                        <PropertyRef Name="___FK_28eddc08004e7c47165d77c1_00040"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CalendarioClienteCliente">
+                <End Type="b2c32e6609630d03165d1678.Calendario" Multiplicity="1" Role="FromRole_CalendarioClienteCliente"/>
+                <End Type="b2c32e6609630d03165d1678.Cliente" Multiplicity="1" Role="ToRole_CalendarioClienteCliente"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_CalendarioClienteCliente">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_CalendarioClienteCliente">
+                        <PropertyRef Name="___FK_c570ebb1b50ef0da16742b3e_00015"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CalendarioCMethodCommunicationMethod">
+                <End Type="b2c32e6609630d03165d1678.Calendario" Multiplicity="1" Role="FromRole_CalendarioCMethodCommunicationMethod"/>
+                <End Type="b2c32e6609630d03165d1678.CommunicationMethod" Multiplicity="1" Role="ToRole_CalendarioCMethodCommunicationMethod"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_CalendarioCMethodCommunicationMethod">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_CalendarioCMethodCommunicationMethod">
+                        <PropertyRef Name="___FK_f31845ff2f5b0c07167459e0_00009"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="CommunicationMethod">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+                <Property Name="___FK_b3d6ecd6fc98000a16749d71_00001" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_b3d6ecd6fc98000a16749d71_00001"/>
+                <NavigationProperty Name="Calendario" Relationship="b2c32e6609630d03165d1678.CommunicationMethodCalendarioCalendario" FromRole="FromRole_CommunicationMethodCalendarioCalendario" ToRole="ToRole_CommunicationMethodCalendarioCalendario"/>
+                <NavigationProperty Name="Supplier" Relationship="b2c32e6609630d03165d1678.CommunicationMethodSupplierSupplier" FromRole="FromRole_CommunicationMethodSupplierSupplier" ToRole="ToRole_CommunicationMethodSupplierSupplier"/>
+            </EntityType>
+            <Association Name="CommunicationMethodCalendarioCalendario">
+                <End Type="b2c32e6609630d03165d1678.CommunicationMethod" Multiplicity="1" Role="FromRole_CommunicationMethodCalendarioCalendario"/>
+                <End Type="b2c32e6609630d03165d1678.Calendario" Multiplicity="*" Role="ToRole_CommunicationMethodCalendarioCalendario"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_CommunicationMethodCalendarioCalendario">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_CommunicationMethodCalendarioCalendario">
+                        <PropertyRef Name="___FK_f31845ff2f5b0c07167459e0_00007"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CommunicationMethodSupplierSupplier">
+                <End Type="b2c32e6609630d03165d1678.CommunicationMethod" Multiplicity="1" Role="FromRole_CommunicationMethodSupplierSupplier"/>
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="ToRole_CommunicationMethodSupplierSupplier"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_CommunicationMethodSupplierSupplier">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_CommunicationMethodSupplierSupplier">
+                        <PropertyRef Name="___FK_b3d6ecd6fc98000a16749d71_00001"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Cities_Available">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+                <Property Name="___FK_b3d6ecd6fc98000a16749d71_00003" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_b3d6ecd6fc98000a16749d71_00003"/>
+                <NavigationProperty Name="Supplier" Relationship="b2c32e6609630d03165d1678.Cities_AvailableSupplierSupplier" FromRole="FromRole_Cities_AvailableSupplierSupplier" ToRole="ToRole_Cities_AvailableSupplierSupplier"/>
+            </EntityType>
+            <Association Name="Cities_AvailableSupplierSupplier">
+                <End Type="b2c32e6609630d03165d1678.Cities_Available" Multiplicity="1" Role="FromRole_Cities_AvailableSupplierSupplier"/>
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="ToRole_Cities_AvailableSupplierSupplier"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_Cities_AvailableSupplierSupplier">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_Cities_AvailableSupplierSupplier">
+                        <PropertyRef Name="___FK_b3d6ecd6fc98000a16749d71_00003"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Services_Available">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Name" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Name"/>
+                <Property Name="___FK_b3d6ecd6fc98000a16749d71_00005" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_b3d6ecd6fc98000a16749d71_00005"/>
+                <NavigationProperty Name="Supplier" Relationship="b2c32e6609630d03165d1678.Services_AvailableSupplierSupplier" FromRole="FromRole_Services_AvailableSupplierSupplier" ToRole="ToRole_Services_AvailableSupplierSupplier"/>
+            </EntityType>
+            <Association Name="Services_AvailableSupplierSupplier">
+                <End Type="b2c32e6609630d03165d1678.Services_Available" Multiplicity="1" Role="FromRole_Services_AvailableSupplierSupplier"/>
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="ToRole_Services_AvailableSupplierSupplier"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_Services_AvailableSupplierSupplier">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_Services_AvailableSupplierSupplier">
+                        <PropertyRef Name="___FK_b3d6ecd6fc98000a16749d71_00005"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Cliente">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Nombre" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Nombre"/>
+                <Property Name="Email" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Email"/>
+                <Property Name="Phone" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Phone"/>
+                <Property Name="___FK_56f213244ada18ea1673fb73_00012" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_56f213244ada18ea1673fb73_00012"/>
+                <Property Name="___FK_8818ed15ba4c13af16748fe9_00001" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_8818ed15ba4c13af16748fe9_00001"/>
+                <NavigationProperty Name="Calendario" Relationship="b2c32e6609630d03165d1678.ClienteCalendarioCalendario" FromRole="FromRole_ClienteCalendarioCalendario" ToRole="ToRole_ClienteCalendarioCalendario"/>
+                <NavigationProperty Name="cita_agente" Relationship="b2c32e6609630d03165d1678.Clientecita_agenteCita_Agente" FromRole="FromRole_Clientecita_agenteCita_Agente" ToRole="ToRole_Clientecita_agenteCita_Agente"/>
+                <NavigationProperty Name="Supplier" Relationship="b2c32e6609630d03165d1678.ClienteSupplierSupplier" FromRole="FromRole_ClienteSupplierSupplier" ToRole="ToRole_ClienteSupplierSupplier"/>
+            </EntityType>
+            <Association Name="ClienteCalendarioCalendario">
+                <End Type="b2c32e6609630d03165d1678.Cliente" Multiplicity="1" Role="FromRole_ClienteCalendarioCalendario"/>
+                <End Type="b2c32e6609630d03165d1678.Calendario" Multiplicity="*" Role="ToRole_ClienteCalendarioCalendario"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_ClienteCalendarioCalendario">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_ClienteCalendarioCalendario">
+                        <PropertyRef Name="___FK_c570ebb1b50ef0da16742b3e_00017"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Clientecita_agenteCita_Agente">
+                <End Type="b2c32e6609630d03165d1678.Cliente" Multiplicity="1" Role="FromRole_Clientecita_agenteCita_Agente"/>
+                <End Type="b2c32e6609630d03165d1678.Cita_Agente" Multiplicity="*" Role="ToRole_Clientecita_agenteCita_Agente"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Clientecita_agenteCita_Agente">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Clientecita_agenteCita_Agente">
+                        <PropertyRef Name="___FK_589c1789373115131674810c_00011"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="ClienteSupplierSupplier">
+                <End Type="b2c32e6609630d03165d1678.Cliente" Multiplicity="1" Role="FromRole_ClienteSupplierSupplier"/>
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="ToRole_ClienteSupplierSupplier"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_ClienteSupplierSupplier">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_ClienteSupplierSupplier">
+                        <PropertyRef Name="___FK_8818ed15ba4c13af16748fe9_00001"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityType Name="Cita_Agente" sap:pdm-semantics="business-data">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Fecha" Type="Edm.DateTime" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:display-format="Date" sap:label="Fecha"/>
+                <Property Name="NombreCliente" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="NombreCliente"/>
+                <Property Name="Medio_Com" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Medio_Com"/>
+                <Property Name="Servicio" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Servicio"/>
+                <Property Name="___FK_589c1789373115131674810c_00009" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_589c1789373115131674810c_00009"/>
+                <Property Name="___FK_589c1789373115131674810c_00011" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_589c1789373115131674810c_00011"/>
+                <Property Name="___FK_589c1789373115131674810c_00013" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_589c1789373115131674810c_00013"/>
+                <Property Name="___FK_589c1789373115131674810c_00017" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="___FK_589c1789373115131674810c_00017"/>
+                <NavigationProperty Name="Agente" Relationship="b2c32e6609630d03165d1678.Cita_AgenteAgenteSupplier" FromRole="FromRole_Cita_AgenteAgenteSupplier" ToRole="ToRole_Cita_AgenteAgenteSupplier"/>
+                <NavigationProperty Name="Cliente" Relationship="b2c32e6609630d03165d1678.Cita_AgenteClienteCliente" FromRole="FromRole_Cita_AgenteClienteCliente" ToRole="ToRole_Cita_AgenteClienteCliente"/>
+            </EntityType>
+            <Association Name="Cita_AgenteAgenteSupplier">
+                <End Type="b2c32e6609630d03165d1678.Cita_Agente" Multiplicity="1" Role="FromRole_Cita_AgenteAgenteSupplier"/>
+                <End Type="b2c32e6609630d03165d1678.Supplier" Multiplicity="1" Role="ToRole_Cita_AgenteAgenteSupplier"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_Cita_AgenteAgenteSupplier">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_Cita_AgenteAgenteSupplier">
+                        <PropertyRef Name="___FK_589c1789373115131674810c_00013"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="Cita_AgenteClienteCliente">
+                <End Type="b2c32e6609630d03165d1678.Cita_Agente" Multiplicity="1" Role="FromRole_Cita_AgenteClienteCliente"/>
+                <End Type="b2c32e6609630d03165d1678.Cliente" Multiplicity="1" Role="ToRole_Cita_AgenteClienteCliente"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_Cita_AgenteClienteCliente">
+                        <PropertyRef Name="ID"/>
+                    </Principal>
+                    <Dependent Role="FromRole_Cita_AgenteClienteCliente">
+                        <PropertyRef Name="___FK_589c1789373115131674810c_00017"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

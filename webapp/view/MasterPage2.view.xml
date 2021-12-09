@@ -1,0 +1,36 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.cis.controller.MasterPage2" xmlns="sap.m">
+    <Page title="Agentes de Venta con citas activas" showHeader="true" showFooter="true" showNavButton="false" navButtonPress="_onPageNavButtonPress">
+        <content>
+            <List mode="SingleSelectMaster" width="100%" headerText="Header" footerText="" backgroundDesign="Solid" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true" visible="true" itemPress="_onObjectListItemPress" items="{path:'/Cita_AgenteSet', templateShareable:true, parameters:{expand:'Agente'}}">
+                <infoToolbar/>
+                <headerToolbar>
+                    <Toolbar enabled="true" visible="true" width="" design="Solid">
+                        <content>
+                            <SearchField placeholder="Search" showSearchButton="true" visible="true" width="100%"/>
+                        </content>
+                    </Toolbar>
+                </headerToolbar>
+                <items>
+                    <ObjectListItem intro="{Agente/ID}" title="{Agente/Name}" number="" numberUnit="{Medio_Com}" numberState="None" type="Active" selected="false" showMarkers="false">
+                        <attributes>
+                            <ObjectAttribute text="E-mail" active="false" visible="true"/>
+                            <ObjectAttribute text="Teléfono" active="false" visible="true"/>
+                        </attributes>
+                        <firstStatus>
+                            <ObjectStatus text="{Agente/email}" state="None" visible="true"/>
+                        </firstStatus>
+                        <secondStatus>
+                            <ObjectStatus title="" text="{Agente/Phone}" state="None" visible="true"/>
+                        </secondStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+        <footer>
+            <OverflowToolbar width="100%" height="46px" design="Auto" enabled="true" visible="true">
+                <content/>
+            </OverflowToolbar>
+        </footer>
+        <headerContent/>
+    </Page>
+</mvc:View>

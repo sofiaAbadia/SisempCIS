@@ -1,0 +1,112 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.cis.controller.DetailPage2" xmlns:uxap="sap.uxap" xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="true" showHeaderContent="true" showAnchorBar="true" showFooter="true" subSectionLayout="TitleOnTop">
+        <uxap:headerContent>
+            <layout:Grid defaultIndent="L0 M0 S0" defaultSpan="L3 M5 S12" position="Center" width="1160.609375px" containerQuery="false" hSpacing="1" vSpacing="1" visible="true">
+                <layout:content>
+                    <Image src="{Image}" height="200px" width="200px" visible="true" densityAware="false" class="sapUiLargeMargin"/>
+                    <ObjectHeader intro="" title="Agente de Ventas" number="" numberUnit="" numberState="None" titleActive="true" backgroundDesign="Transparent" condensed="false" visible="true">
+                        <attributes>
+                            <ObjectAttribute title="Name" text="{Name}" active="false" visible="true"/>
+                            <ObjectAttribute title="Email" text="{email}" active="false" visible="true"/>
+                            <ObjectAttribute title="Phone" text="{Phone}" active="false" visible="true"/>
+                        </attributes>
+                        <statuses/>
+                        <markers/>
+                    </ObjectHeader>
+                </layout:content>
+            </layout:Grid>
+            <form:Form width="auto" editable="true" visible="true" class="sapUiTinyMargin">
+                <form:title>
+                    <core:Title text="Por favor ingrese la siguiente Información:" level="Auto"/>
+                </form:title>
+                <form:formContainers>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="Nombre Cliente" design="Bold" width="100%" required="true" textAlign="Left" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="Servicio" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <ComboBox selectedKey="{Services/Name}" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/Services_AvailableSet', templateShareable:true}">
+                                        <items>
+                                            <core:Item text="{ID}" enabled="true" key="{ID}"/>
+                                        </items>
+                                    </ComboBox>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="Ciudad" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <ComboBox selectedKey="{Cities/Name}" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/Cities_AvailableSet', templateShareable:true}">
+                                        <items>
+                                            <core:Item text="{ID}" enabled="true" key="{ID}"/>
+                                        </items>
+                                    </ComboBox>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                    <form:FormContainer visible="true">
+                        <form:formElements>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="Fecha y hora" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <DateTimePicker id="sap_uxap_ObjectPageLayout_0-headerContent-build_simple_form_Form-1637551483680-formContainers-build_simple_form_FormContainer-1-formElements-build_simple_form_FormElement-1-fields-sap_m_DateTimePicker-1637552021618" value="20211116090000" width="auto" displayFormat="medium" required="true" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMddHHmmss"/>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="Medio de Comunicación" design="Bold" width="100%" required="true" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <ComboBox selectedKey="{CMethod/Name}" editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%" items="{path:'/CommunicationMethodSet', templateShareable:true}">
+                                        <items>
+                                            <core:Item text="{ID}" enabled="true" key="{ID}"/>
+                                        </items>
+                                    </ComboBox>
+                                </form:fields>
+                            </form:FormElement>
+                            <form:FormElement visible="true">
+                                <form:label>
+                                    <Label text="Comentarios Adicionales" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+                                </form:label>
+                                <form:fields>
+                                    <Input type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+                                </form:fields>
+                            </form:FormElement>
+                        </form:formElements>
+                        <form:title/>
+                    </form:FormContainer>
+                </form:formContainers>
+                <form:layout>
+                    <form:ResponsiveGridLayout adjustLabelSpan="false" columnsL="2" labelSpanL="3" columnsM="1" labelSpanM="2" labelSpanS="12"/>
+                </form:layout>
+            </form:Form>
+        </uxap:headerContent>
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectTitle="Agendar Cita" objectSubtitle="" headerDesign="Light" objectImageShape="Square" isObjectIconAlwaysVisible="true" isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="true" isActionAreaAlwaysVisible="true">
+                <uxap:actions>
+                    <Button text="Agendar" type="Accept" icon="sap-icon://future" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" class="sapUiTinyMargin" press="_onButtonPress"/>
+                    <Button text="Ver citas" type="Transparent" icon="sap-icon://kpi-managing-my-area" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" class="sapUiTinyMargin" press="_onButtonPress1"/>
+                </uxap:actions>
+                <uxap:breadCrumbsLinks/>
+                <uxap:navigationBar/>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:sections/>
+        <uxap:footer/>
+    </uxap:ObjectPageLayout>
+</mvc:View>
